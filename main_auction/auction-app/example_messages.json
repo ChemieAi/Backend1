@@ -1,0 +1,93 @@
+[
+    { 
+        "sender": "client",
+        "msg_type": "connect_user_to_auction",
+        "content": {
+            "user": {
+                "name": "Test",
+                "id": "be906608-f741-4733-ae2e-e35b1707b286",
+            },
+            "auction_id": "c0803840-7ce1-4209-98b4-2d7c60245053" 
+        }
+    },
+    { 
+        "sender": "client",
+        "msg_type": "disconnect_user_from_auction",
+        "content": {
+            "user": {
+                "name": "Test",
+                "id": "be906608-f741-4733-ae2e-e35b1707b286",
+            },
+            "auction_id": "c0803840-7ce1-4209-98b4-2d7c60245053" 
+        }
+    },
+    { 
+        "sender": "client",
+        "msg_type": "send_bid",
+        "content": {
+            "auction_id": "c0803840-7ce1-4209-98b4-2d7c60245053",
+            "bidder": {
+                "name": "Test",
+                "id": "be906608-f741-4733-ae2e-e35b1707b286",
+            },
+            "amount": 310.0
+        }
+    },
+    { 
+        "sender": "client",
+        "msg_type": "create_auction",
+        "content": {
+            "owner": {
+                "name": "Test",
+                "id": "be906608-f741-4733-ae2e-e35b1707b286",
+            },
+            "item_name": "Test Item",
+            "starting_price": 100.0,
+            "deadline": 1,
+        }
+    },
+    { 
+        "sender": "client",
+        "msg_type": "close_auction",
+        "content": {
+            "owner_id": "5fe5e56a-3003-4efe-8b9c-dadd1bcebe03",
+            "auction_id": "f33605cf-cc49-470c-b7d6-2b97b08538da"
+        }
+    },
+    { 
+        "sender": "client",
+        "msg_type": "end-auction",
+        "content": {
+            "auction_id": "c0803840-7ce1-4209-98b4-2d7c60245053",
+            "owner_id": "be906608-f741-4733-ae2e-e35b1707b286"
+        }
+    },
+    { 
+        "sender": "server",
+        "msg_type": "auction_info",
+        "content": {
+            "auction_id": "c0803840-7ce1-4209-98b4-2d7c60245053",
+            "owner": "Test"
+            "item_name": "Test Item",
+            "starting_price": 100.0,
+            "bids": [
+                {
+                    "bidder": "Test",
+                    "amount": 110.0,
+                },
+                {
+                    "bidder": "Test2",
+                    "amount": 120.0,
+                }
+            ],
+            "deadline": 1,
+            "open": true,
+            "buyer": null
+        }
+    },
+    {
+        "sender": "server",
+        "msg_type": "update_auction_list",
+        "content": [{ "Auction 1":  "c0803840-7ce1-4209-98b4-2d7c60245053" }]
+    }
+]
